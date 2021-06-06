@@ -15,7 +15,7 @@ app.use('/apirequest',apiroute);
 
 
 
-const port=3131;
+const port=process.env.port || 3131;
 //mongodb://127.0.0.1:27017/restaurant
 //mongodb+srv://mitesh1234:mitesh@1234@cluster0.2xqey.mongodb.net/restaurantdb?retryWrites=true&w=majority
 mongodb.connect(' mongodb+srv://mitesh1234:mitesh@1234@cluster0.2xqey.mongodb.net/restaurantdb?retryWrites=true&w=majority',
