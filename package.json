@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:nodemon": "nodemon main.js"
   },
