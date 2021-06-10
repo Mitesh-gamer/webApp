@@ -36,7 +36,7 @@ class Details extends React.Component {
         const restaurentid = this.props.location.pathname.split('/')[2];
         axios({
             method: 'GET',
-            url: 'http://localhost:3131/apirequest/restaurantbyid/' + restaurentid,
+            url: 'https://foodiesshop.herokuapp.com/apirequest/restaurantbyid/' + restaurentid,
             headers: { 'Content-Type': 'application/json' }
         }).then(response => this.setState({ restaurents: response.data.restaurent[0] ,restaurentid:restaurentid})).catch(err => console.log(err));
     }
@@ -45,7 +45,7 @@ class Details extends React.Component {
         this.setState({ itemmodalopen: true })
         axios({
             method: 'GET',
-            url: 'http://localhost:3131/apirequest/itemslist/'+ restaurentid,
+            url: 'https://foodiesshop.herokuapp.com/apirequest/itemslist/'+ restaurentid,
             headers: { 'Content-Type': 'application/json' }
         }).then(response => this.setState({ items: response.data.response })).catch(err => console.log(err));
     }
