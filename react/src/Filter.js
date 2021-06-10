@@ -35,24 +35,24 @@ class Filter extends React.Component{
         };
         axios({
             method:'POST',
-            url:'http://localhost:3131/apirequest/restaurantbycity',
+            url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
             headers:{'Content-Type':'application/json'},
             data:filterobj
         }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,mealtype:mealtype_id,city:Number(secity)})).catch(err=>console.log(err))
         if(city=="undefined"){ axios({
             method:'GET',
-            url:`http://localhost:3131/apirequest/city`,
+            url:'https://foodiesshop.herokuapp.com/apirequest/city',
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({location:response.data.location,text:response.data.location[0].name.split(',')[1]})).catch(err=>console.log(err))
         }else{ axios({
             method:'GET',
-            url:`http://localhost:3131/apirequest/city/${Number(secity)}`,
+            url:'https://foodiesshop.herokuapp.com/apirequest/city/${Number(secity)}',
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({location:response.data.location,text:response.data.location[0].name.split(',')[1]})).catch(err=>console.log(err))
         }
        axios({
             method:'GET',
-            url:'http://localhost:3131/apirequest/mealtypebyid/'+mealtype_id,
+            url:'https://foodiesshop.herokuapp.com/apirequest/mealtypebyid/'+mealtype_id,
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({mealtypename:response.data.mealtype[0]})).catch(err=>console.log(err))
     }
@@ -77,7 +77,7 @@ class Filter extends React.Component{
         };
         axios({
             method:'POST',
-            url:'http://localhost:3131/apirequest/restaurantbycity',
+            url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
             headers:{'Content-Type':'application/json'},
             data:filterobj
         }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,cuisiona:cuisiona,city:city})).catch(err=>console.log(err))  
@@ -93,7 +93,7 @@ class Filter extends React.Component{
         };
         axios({
             method:'POST',
-            url:'http://localhost:3131/apirequest/restaurantbycity',
+            url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
             headers:{'Content-Type':'application/json'},
             data:filterobj
         }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,cuisiona:cuisiona,lcost:lcost,
@@ -112,7 +112,7 @@ class Filter extends React.Component{
 
         axios({
             method:'POST',
-            url:'http://localhost:3131/apirequest/restaurantbycity',
+            url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
             headers:{'Content-Type':'application/json'},
             data:filterobj
         }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,cuisiona:cuisiona,lcost:lcost,
@@ -131,7 +131,7 @@ class Filter extends React.Component{
         };
         axios({
             method:'POST',
-            url:'http://localhost:3131/apirequest/restaurantbycity',
+            url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
             headers:{'Content-Type':'application/json'},
             data:filterobj
         }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,cuisiona:cuisiona,lcost:lcost,
@@ -155,7 +155,7 @@ class Filter extends React.Component{
        } 
    axios({
     method:'POST',
-    url:'http://localhost:3131/apirequest/restaurantbycity',
+    url:'https://foodiesshop.herokuapp.com/apirequest/restaurantbycity',
     headers:{'Content-Type':'application/json'},
     data:filterobj
 }).then(response=>this.setState({restaurents:response.data.restaurant,pagecount:response.data.Numberofpage,cuisiona:cuisiona,lcost:lcost,
