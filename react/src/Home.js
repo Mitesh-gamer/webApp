@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Style/home.css';
 import Quickcontent from './Quickcontent'
 import axios from 'axios';
@@ -19,12 +19,12 @@ class Home extends React.Component {
         sessionStorage.setItem('city',undefined);
         axios({
             method:'GET',
-            url:'http://localhost:3131/apirequest/city',
+            url:'https://foodiesshop.herokuapp.com/apirequest/city',
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({location:response.data.location})).catch(err=>console.log(err))
         axios({
             method:'GET',
-            url:'http://localhost:3131/apirequest/mealtype',
+            url:'https://foodiesshop.herokuapp.com/apirequest/mealtype',
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({mealtype:response.data.mealtype})).catch(err=>console.log(err))
     }
