@@ -50,7 +50,7 @@ class Headers extends React.Component {
         }
         axios({
             method: 'POST',
-            url: 'http://localhost:3131/apirequest/login',
+            url: 'https://foodiesshop.herokuapp.com/apirequest/login',
             headers: { 'Content-Type': 'application/json' },
             data: loginobj
         }).then(response => {
@@ -69,7 +69,7 @@ class Headers extends React.Component {
         }
         axios({
             method:'POST',
-            url: 'http://localhost:3131/apirequest/signup',
+            url: 'https://foodiesshop.herokuapp.com/apirequest/signup',
             headers: { 'Content-Type': 'application/json' },
             data: signupobj
         }).then(response => {
