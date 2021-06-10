@@ -39,7 +39,7 @@ class Home extends React.Component {
 
         axios({
             method:'GET',
-            url:`http://localhost:3131/apirequest//getrestaurantbycityparam/${city}`,
+            url:`https://foodiesshop.herokuapp.com/apirequest//getrestaurantbycityparam/${city}`,
             headers:{'Content-Type':'application/json'}
         }).then(response=>this.setState({restaurants:response.data.restaurent})).catch(err=>console.log(err))
     }
