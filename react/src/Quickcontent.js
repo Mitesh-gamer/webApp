@@ -1,6 +1,6 @@
 import React from 'react';
 import './Style/home.css';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router'
 
 class Quickcontent extends React.Component {
     handleclick=(id)=>{
